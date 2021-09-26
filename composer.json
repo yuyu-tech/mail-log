@@ -1,0 +1,28 @@
+{
+    "name": "yuyu-tech/mail-log",
+    "description": "Laravel Package to log all outgoing email into database.",
+    "type": "library",
+    "require": {
+        "laravel/framework": "^8"
+    },
+    "keywords": ["laravel", "email", "logging", "filter email"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bhushan Mer",
+            "email": "bhushanmer@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Yuyu\\MailLog\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Yuyu\\MailLog\\Providers\\MailLogServiceProvider"
+            ]
+        }
+    }
+}
