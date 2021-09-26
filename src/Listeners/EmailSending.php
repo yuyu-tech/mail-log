@@ -83,6 +83,7 @@ class EmailSending
         elseif(config('mailLog.send_if_all_valid', false) && count($emailLog->filtered_to['valid']) !== count($emailLog->to)) {
             return $this->logError($emailLog, 'TO_ADDRESS_MODIFIED');
         }
+        $message->setTo($emailLog->filtered_to['valid']);
 
         /**
          * Filter CC addresses
@@ -91,6 +92,7 @@ class EmailSending
         if(!empty($emailLog->cc) && config('mailLog.send_if_all_valid', false) && count($emailLog->filtered_cc['valid']) !== count($emailLog->cc)) {
             return $this->logError($emailLog, 'CC_ADDRESS_MODIFIED');
         }
+        $message->setCc(!empty($emailLog->filtered_cc['valid']) ? $emailLog->filtered_cc['valid'] : []);
 
         /**
          * Filter BCC addresses
@@ -99,6 +101,7 @@ class EmailSending
         if(!empty($emailLog->bcc) && config('mailLog.send_if_all_valid', false) && count($emailLog->filtered_bcc['valid']) !== count($emailLog->bcc)) {
             return $this->logError($emailLog, 'BCC_ADDRESS_MODIFIED');
         }
+        $message->setBcc(!empty($emailLog->filtered_bcc['valid']) ? $emailLog->filtered_bcc['valid'] : []);
 
         $emailLog->is_address_modified = $this->addressModified;
         $emailLog->save();
