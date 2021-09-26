@@ -10,7 +10,8 @@
     "authors": [
         {
             "name": "Bhushan Mer",
-            "email": "bhushanmer@gmail.com"
+            "email": "bhushanmer@gmail.com",
+            "homepage": "https://github.com/yuyu-tech"
         }
     ],
     "autoload": {
