@@ -3,7 +3,7 @@
     "description": "Laravel Package to log all outgoing email into database.",
     "type": "library",
     "require": {
-        "laravel/framework": "^5.3|^6.0|^7.0|^8"
+        "laravel/framework": "^5.3|^6.0|^7.0|^8|^9|^10"
     },
     "keywords": ["laravel", "email", "logging", "filter email"],
     "license": "MIT",
